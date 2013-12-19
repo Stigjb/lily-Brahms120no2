@@ -3,7 +3,7 @@
 \include "clarinet.ly"
 
 \score {
-	\new Staff << \transposition bes c' { \global } \clarinet >>
+	\new Staff << \transpose bes c' { \globalOne } \clarinetOne >>
 	\layout {}
 }
 
