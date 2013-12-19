@@ -4,7 +4,8 @@ global_1 = \relative c {
 	\collapseMultiBarRests
 	\numericTimeSignature
 	\time 4/4
-	\key as \major
+	\key es \major
+	\tempo "Allegro amabile."
 	
-	s1
+	s1*5
 }
