@@ -8,4 +8,15 @@ globalOne = \relative c {
 	\tempo "Allegro amabile."
 	
 	s1*5
+	s1*4
+	s1*4
+	s1*6
+	s1*4
+	s1*6
+	s1*4
+	s1*4
+	s1*5
+	s1*5
+	
+	% Page 2
 }
