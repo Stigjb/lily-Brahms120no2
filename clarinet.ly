@@ -7,6 +7,7 @@ clarinetOne = \relative c'' {
 	
 	f'4.( e8) cis( d) fis,( g) | f!4( ~ f16 e g bes) d8( des) des( c) |
 	c8(\< b\! c\> as\! g4) r8 g,(_"più p" |
+	\set tupletSpannerDuration = #(ly:make-moment 2 4)
 	\times 2/3 { bes'8[ a! fis } \times 2/3 { g a, bes]) }
 		\times 2/3 { f'[( e cis } \times 2/3 { d fis, g]) } |
 }
