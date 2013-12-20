@@ -1,22 +1,22 @@
 \version "2.12.3"
 
 globalOne = \relative c {
-	% \collapseMultiBarRests
-	\numericTimeSignature
-	\time 4/4
-	\key es \major
-	\tempo "Allegro amabile."
-	
-	s1*5
-	s1*4
-	s1*4
-	s1*6
-	s1*4
-	s1*6
-	s1*4
-	s1*4
-	s1*5
-	s1*5
-	
-	% Page 2
+  \compressFullBarRests
+  \numericTimeSignature
+  \time 4/4
+  \key es \major
+  \tempo "Allegro amabile."
+  
+  s1*5 \break
+  s1*4 \break
+  s1*4 \break
+  s1*6 \break
+  s1*4 \break
+  s1*6 \break
+  s1*4 \break
+  s1*4 \break
+  s1*5 \break
+  s1*5 \break
+  
+  % Page 2
 }
