@@ -53,4 +53,19 @@ clarinetOne = \relative c'' {
   \times 2/3 {e8[( g c} \times 2/3 {e g e])} f4 r |
   \times 2/3 {e,8[( a b} \times 2/3 {c e c])} d4 r |
   R1*2
+  
+  % Page 2
+  
+  r2 f,4( f')_\markup {\italic dim.} |
+  r2 a,4( a') | r2 c,4( c') | r2 g4( g') ~ |
+  g4.(\p fis8 a g b, e) |
+  d8( c4 b8 d c e, b') |
+
+  a8(\< g4 fis8) a( g4 fis8)\! |
+  \times 2/3 { a8(\> g fis) a( g e) }  d8( c) c( bes!)\! |
+  a8(\p c a'2) r4 |
+  e,8( g bes2) r4 |
+  c''2( fis,4) r8 d,( |
+  f!2.) r4 | R1*3 |
+  
 }

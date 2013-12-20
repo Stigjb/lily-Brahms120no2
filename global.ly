@@ -7,16 +7,16 @@ globalOne = \relative c {
   \key es \major
   \tempo "Allegro amabile."
   
-  s1*5 \break
-  s1*4 \break
-  s1*4 \break
-  s1*6 \break
-  s1*4 \break
-  s1*6 \break
-  s1*4 \break
-  s1*4 \break
-  s1*5 \break
-  s1*5 \break
+  s1*5
+  s1*4
+  s1*4
+  s1*6
+  s1*4
+  s1*6
+  s1*4
+  s1*4
+  s1*5
+  s1*5
   
   % Page 2
 }

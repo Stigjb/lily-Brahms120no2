@@ -1,6 +1,7 @@
 \version "2.12.3"
 \include "global.ly"
 \include "clarinet.ly"
+\include "piano.ly"
 
 \header {
   title = "Clarinet sonata no. 2"
@@ -9,8 +10,28 @@
 }
 
 \score {
+  <<
+    \new Staff \with {midiInstrument = #"clarinet"} <<
+      \transpose bes c' { \globalOne }
+      \clarinetOne
+    >>
+    \new PianoStaff <<
+      \new Staff = "up" \pianoROne
+      % \pianoDynOne
+      \new Staff = "down" \pianoLOne
+    >>
+  >>
+  \layout {}
+  \midi {
+    \context {
+      \Score
+      tempoWholesPerMinute = #(ly:make-moment 120 4)
+    }
+  }
+} %}
+
+\score {
   \new Staff \with {midiInstrument = #"clarinet"} << \transpose bes c' { \globalOne } \clarinetOne >>
-  
   \layout {}
   \midi {
     \context {
