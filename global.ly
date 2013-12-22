@@ -1,5 +1,8 @@
 \version "2.12.3"
 
+tupletNumbersOn = {\override TupletNumber #'stencil = ##t}
+tupletNumbersOff = {\override TupletNumber #'stencil = ##f}
+
 globalOne = \relative c {
   \compressFullBarRests
   \numericTimeSignature
@@ -7,9 +10,23 @@ globalOne = \relative c {
   \key es \major
   \tempo "Allegro amabile."
   
-  s1*5
-  s1*4
-  s1*4
+  % Page 3
+  % Bar 1
+  s1*13
+  %\pageBreak
+  
+  % Page 4
+  % Bar 14
+  s1*18
+  %\pageBreak
+  
+  % Page 5
+  % Bar 32
+  s1*17
+  %\pageBreak
+  
+  % Page 6
+  % Bar 49
   s1*6
   s1*4
   s1*6
@@ -18,5 +35,4 @@ globalOne = \relative c {
   s1*5
   s1*5
   
-  % Page 2
 }
