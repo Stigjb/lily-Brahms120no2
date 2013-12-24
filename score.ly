@@ -1,4 +1,4 @@
-\version "2.12.3"
+\version "2.16.0"
 \include "global.ly"
 \include "clarinet.ly"
 \include "piano.ly"
@@ -17,16 +17,13 @@
     >>
     \new PianoStaff <<
       \new Staff = "up" \pianoROne
-      % \pianoDynOne
+      \pianoDynOne
       \new Staff = "down" \pianoLOne
     >>
   >>
   \layout {}
   \midi {
-    \context {
-      \Score
-      tempoWholesPerMinute = #(ly:make-moment 120 4)
-    }
+    \tempo 4 = 120
   }
 } %}
 
@@ -34,10 +31,7 @@
   \new Staff \with {midiInstrument = #"clarinet"} << \transpose bes c' { \globalOne } \clarinetOne >>
   \layout {}
   \midi {
-    \context {
-      \Score
-      tempoWholesPerMinute = #(ly:make-moment 120 4)
-    }
+    \tempo 4 = 120
   }
 }
 

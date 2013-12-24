@@ -1,4 +1,4 @@
-\version "2.12.3"
+\version "2.16.0"
 
 \include "global.ly"
 
@@ -150,7 +150,7 @@ clarinetOne = \relative c'' {
   r2 c!4\<( es\>) ~ |
   es8\! r r4 r2 |
   r2 e!4\p\<( g\> ~ |
-  g4\! d\<( e) f!\! ~ |
+  g4\! d\< e) f!\! ~ |
   f4 bes\>( a\!) d,(_\markup {\italic {molto dolce}} |
   c4. b8) e4.( d8) |
   
