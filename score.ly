@@ -9,29 +9,33 @@
   opus = "Op. 120 no. 2"
 }
 
-\score {
-  <<
-    \new Staff \with {midiInstrument = #"clarinet"} <<
-      \transpose bes c' { \globalOne }
-      \clarinetOne
+\bookpart {
+  \score {
+    <<
+      \new Staff \with {midiInstrument = #"clarinet"} <<
+        \transpose bes c' { \globalOne }
+        \clarinetOne
+      >>
+      \new PianoStaff <<
+        \new Staff = "up" \pianoROne
+        \pianoDynOne
+        \new Staff = "down" \pianoLOne
+      >>
     >>
-    \new PianoStaff <<
-      \new Staff = "up" \pianoROne
-      \pianoDynOne
-      \new Staff = "down" \pianoLOne
-    >>
-  >>
-  \layout {}
-  \midi {
-    \tempo 4 = 120
+    \layout {}
+    \midi {
+      \tempo 4 = 120
+    }
   }
-} %}
+}
 
-\score {
-  \new Staff \with {midiInstrument = #"clarinet"} << \transpose bes c' { \globalOne } \clarinetOne >>
-  \layout {}
-  \midi {
-    \tempo 4 = 120
+\bookpart {
+  \score {
+    \new Staff \with {midiInstrument = #"clarinet"} << \transpose bes c' { \globalOne } \clarinetOne >>
+    \layout {}
+    \midi {
+      \tempo 4 = 120
+    }
   }
 }
 

@@ -174,7 +174,7 @@ clarinetOne = \relative c'' {
   %%%%%%%%%%
   
   % Bar 112
-  \override TupletNumber #'stencil = ##t
+  \tupletNumbersOn
   f!4(^\markup { \italic dol. } ~ f16 e g bes c e g bes
     \times 4/5 { c e g bes d } |
   c4) r r f,( |
@@ -185,7 +185,7 @@ clarinetOne = \relative c'' {
   % Bar 117
   r8 bes4\f( a8 c bes des, g) |
   \times 2/3 {f( es d!
-              \override TupletNumber #'stencil = ##f
+              \tupletNumbersOff
               f es c) bes(_\markup {\italic dim.} as g! bes as ges)} |
   es8 c bes2\<( as4\>) |
   as4\!( as') r8 as\<( as bes\! |
