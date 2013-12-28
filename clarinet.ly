@@ -189,4 +189,11 @@ clarinetOne = \relative c'' {
               f es c) bes(_\markup {\italic dim.} as g! bes as ges)} |
   es8 c bes2\<( as4\>) |
   as4\!( as') r8 as\<( as bes\! |
+  
+  bes4\> es,\!) r8 es( as! es) | % Bar 121
+  f4.( des8) des4.( c8) |
+  c4( des es) r |
+  es'4(_\markup {\italic più \dynamic p} f g) r |
+  es,4(\< f\! g4.\> c,8\!) |
+  c4.( c'8) c4( d) |
 }

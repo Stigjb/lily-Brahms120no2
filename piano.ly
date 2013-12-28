@@ -13,14 +13,10 @@ rightOneVOne = \relative c, {
     \change Staff = "up" g' es' g bes, es g,) | % Bar 1
   \change Staff = "down" f,8( d'
     \change Staff = "up" as' f' as d, f as,) |
-  \change Staff = "down" g,8( es'
-    \change Staff = "up" bes' es)
-    \change Staff = "down" g,( bes
-    \change Staff = "up" es g) |
-  \change Staff = "down" as,,8( f'
-    \change Staff = "up" c' f)
-    \change Staff = "down" as,( c
-    \change Staff = "up" f as) |
+  \change Staff = "down" g,8( es' \change Staff = "up" bes' es)
+    \change Staff = "down" g,( bes \change Staff = "up" es g) |
+  \change Staff = "down" as,,8( f' \change Staff = "up" c' f)
+    \change Staff = "down" as,( c \change Staff = "up" f as) |
   
   <d, as' d>4( <es as c> <f as bes>) r | % Bar 5
   <as, es' as>4( <bes d g> <c es f>) r |
@@ -56,8 +52,8 @@ rightOneVOne = \relative c, {
   \change Staff = "up" \oneVoice
     r4 <d''! bes' d!>-.( <d, bes' d>-.) r8 <d bes' d>[( |
   q8 <es g>]) q4 <c a' c> r8 q[( |
-  <d f>8 <a f' a>]) <bes d>4.( \clef bass <g cis>8) q4( |
-  s8 <fis d'>) q4( <g c> <c, f>) |
+  <d f>8 <a f' a>]) <bes d>4.( \clef bass <g cis>8) q4( ~ |
+  q8 <fis d'>) q4( <g c> <c, f>) |
   \clef treble r4 <f' a f'>( <es bes' es> <es as>) |
   
   r4 \change Staff = "down" \voiceOne <f, bes>( <es ges> <c f>) | % Bar 27
@@ -108,6 +104,51 @@ rightOneVOne = \relative c, {
   r8 \voiceOne f,( bes b) \oneVoice r8 \voiceOne f( c' cis) |
   d,( as'! ~ \oneVoice <as d>4) r2 |
   \clef "treble" es''4.( d8 f es g, c) |
+  
+  as2( d,4) \clef "bass" r8 c( | % Bar 57
+  \voiceOne des2.) r4 |
+  \clef "treble" c'2( fis,4) \oneVoice r8 <d d'>-. |
+  <d' g bes d>4.( <bes bes'>8-.) <d, f bes d>4.( <f f'>8-.) |
+  
+  <f' bes d f>4.( <d d'>8-.) <f, a d f>4.( <a a'>8-.) | % Bar 61
+  <a' d a'>4. <as, as'>8-. <as' d as'>4. <g, g'>8-. |
+  \times 2/3 { <g' c g'>( es'! c g es c) g[( es bes \clef "bass" g es bes]) } |
+  
+  %%%%%%%%%%
+  % Page 7
+  %%%%%%%%%%
+  
+  \times 2/3 { r8 g( g') r bes,( bes') \clef "treble" r g( g') r bes,( bes') } | % Bar 64
+  d,4( <g bes d>) r8 \voiceOne d'( d es |
+  es4 a,) \oneVoice r8 \voiceOne a( d a |
+  d4 g,) \oneVoice r8 \voiceOne g( c g |
+  
+  c8 g b g bes4 g) | % Bar 68
+  \clef "bass" \oneVoice r4 <d, g d'>-.( <f! g>-.) r8 <es g> |
+  q4 <es es'> <d a'> \clef "treble" r8 <d' ais'>[( |
+  q8 <d b'>] q4. <e g e'>8 q4) ~ |
+  
+  q8 <b g'>( q4 <d b'> <c a'>) | % Bar 72
+  \voiceOne <c d fis a d>4.( cis'8 e d4.) ~ |
+  \oneVoice d8 d4. ~ d8 d4. ~ |
+  
+  d8 <f, g b g'>4( fis'8 a g4.) ~ | % bar 75
+  g8 g4. ~ g4 b,,8( e |
+  d8 c) g[( c b a]) r4 |
+  
+  %%%%%%%%%%
+  % Page 8
+  %%%%%%%%%%
+  
+  <g b g'>4 r r \tupletNumbersOn \times 2/3 { <c' c'>8( g' <c, c'> } | % Bar 78
+  \times 2/3 { g'8-.)( <b, b'>-. d-. <g, g'>-. b-. <d, d'>-. g-. <b, b'>-. d-.) } <es, es'>8 <f f'> |
+  <g b g'>4 r r <f' d' f>8( <es c' es>) |
+  <d b' d>2 r4 <f d' f>8( <es c' es> |
+  
+  <as f' as>8 <g es' g> <f d' f> <es c' es> <d b' d>4) r | % Bar 82
+  \clef "bass" r \voiceOne b4 s2 \clef "treble" \oneVoice |
+  r4 <e cis' e>8( <d b' d> <g e' g> <fis d' fis> <e cis' e> <d b' d> |
+  <cis ais' cis>4) r r
 }
 
 rightOneVTwo = \relative c {
@@ -121,6 +162,34 @@ rightOneVTwo = \relative c {
   s1*6 |
   s8 f,4 gis8 s f4 a8 | % Bar 54
   d,4 s2. |
+  s1*2 |
+  e8( g bes2) r4 | % Bar 58
+  s1*5
+  
+  %%%%%%%%%%
+  % Page 7
+  %%%%%%%%%%
+  
+  s1 | % Bar 64
+  s2 s8 <g' bes>4 q8 ~ |
+  q4 g s8 g4 <f a>8 ~ |
+  q4 f s8 f4 <e g>8 ~ |
+  
+  q8 <es g>4 <d g>8 ~ q4 <cis e> | % Bar 68
+  s1*3 |
+  
+  s2 fis | % Bar 72
+  s1*2 |
+  
+  s1*3 | % Bar 75
+  
+  %%%%%%%%%%
+  % Page 8
+  %%%%%%%%%%
+  
+  s1 | % Bar 78
+  s2. c4 |
+  s1*2 |
 }
 
 leftOneVOne = \relative c {
@@ -138,7 +207,7 @@ leftOneVOne = \relative c {
   bes4( bes bes \oneVoice bes,8) r |
   r4 b( c a)
   
-  bes4 bes'8 r r2 | % Bar 10
+  bes4( bes'8) r r2 | % Bar 10
   \voiceOne bes1 | bes1 |
   \oneVoice <g bes>4.( fis8 g bes es g,) |
   
@@ -147,9 +216,9 @@ leftOneVOne = \relative c {
   %%%%%%%%%%
   
   <as c>4.( g8 \voiceOne as c f a,) | % Bar 14
-  \oneVoice bes8 <bes, bes'>-. <d' bes' d>4. <bes bes'>8-. <d, bes' d>4 |
-  s8 <b b'>8-. <d' d'>4. <c, c'>8-. <c' es c'>4 |
-  s8 <a a'>-. <a, a'>4. <f' f'>8-. <f, f'>4 |
+  \oneVoice bes8 <bes, bes'>-.\noBeam <d' bes' d>4. <bes bes'>8-. <d, bes' d>4 ~ |
+  q8 <b b'>8-. <d' d'>4. <c, c'>8-. <c' es c'>4 ~ |
+  q8 <a a'>-. <a, a'>4. <f' f'>8-. <f, f'>4 |
   
   \times 2/3 {<ges ges'>8( bes es} ges16 bes d ges) \voiceTwo <es,, es'>2 | % Bar 18
   as!2( des) |
@@ -158,8 +227,8 @@ leftOneVOne = \relative c {
   
   \oneVoice r4 bes,( bes') r8 bes[( | % Bar 22
   bes8 c]) c4( f,) r8 f[( |
-  bes f]) g4.( <es cis'>8) q4( |
-  s8 <d d'>) q4( <es c'!> <f a>) |
+  bes f]) g4.( <es cis'>8) q4( ~ |
+  q8 <d d'>) q4( <es c'!> <f a>) |
   r4 <f' a>( <ges bes> <as c>) |
   
   r4 \voiceTwo <des,, des'>( <es c'> <f a>) | % Bar 27
@@ -209,12 +278,12 @@ leftOneVOne = \relative c {
   
   f,4.( d'8 f4) r | % Bar 57
   g,4.( e'8 g4) r |
-  \voiceOne fis8 a \change Staff = "up" c2 \change Staff = "down" \oneVoice r4 |
+  \voiceOne fis8 a \change Staff = "up" \voiceTwo c2 \change Staff = "down" \oneVoice r4 |
   r8 <bes, bes'>-. <bes, bes'>4.( <d d'>8-.) <bes' bes'>4( ~ |
   
-  q8 <d d'>-.) <d, d'>4.( <f f'>8)-. <d' d'>4 | % Bar 61
-  s8 <f f'>-. <f, f'>4. <f' f'>8-. <f, f'>4 |
-  s8 <es' es'>-. <es, es'>4.-. <c c'>8-. <c, c'>4 |
+  q8 <d d'>-.) <d, d'>4.( <f f'>8)-. <d' d'>4 ~ | % Bar 61
+  q8 <f f'>-. <f, f'>4. <f' f'>8-. <f, f'>4 ~ |
+  q8 <es' es'>-. <es, es'>4.-. <c c'>8-. <c, c'>4 |
   
   %%%%%%%%%%
   % Page 7
@@ -223,7 +292,43 @@ leftOneVOne = \relative c {
   <bes bes'>4-. <g' g'>-. <bes bes'>-. <g' g'>-. | % Bar 64
   d'4( <g bes d>) r8 \voiceOne d' d es |
   es4 a, \oneVoice r8 \voiceOne a d a |
+  d4 g, \oneVoice r8 \voiceOne g c g |
+
+  c8 g b g bes4 g | % Bar 68
+  \oneVoice r4 b,,( b') r8 b[( |
+  b8 c]) c4( fis,) r8 <fis' ais>[ |
+  q8 <g b>] q4. cis,8 cis4 ~ |
   
+  cis8 d d4 d,2 | % Bar 72
+  \times 2/3 { g,8[( g' d' \tupletNumbersOff
+    fis c' \change Staff = "up" fis] c'[ fis, c d c \change Staff = "down" f,]) } |
+  \times 2/3 { b8( g d g d b e c g c g es) } |
+  
+  <d g d'>4 \times 2/3 { g,8( g' d' f b d g f b, } | % Bar 75
+  \times 2/3 { e8 c g c g e g e c) g'( f b, } |
+  \times 2/3 { e8 c g es' c g c g es) } r4 |
+  
+  %%%%%%%%%%
+  % Page 8
+  %%%%%%%%%%
+  
+  \tupletNumbersOn
+  <d g d'>4 r r \times 2/3 { <g, g'>8( c <g g'> } | % Bar 78
+  \tupletNumbersOff
+  \times 2/3 { b8) <g g'> d' <b b'> g' <d d'> b' <g g'> d' } <c, g'>4 |
+  <g g'>4 r r \tupletNumbersOn \voiceOne \times 2/3 { g'8( c g) } |
+  \oneVoice <g, g'>2 r4 <es' g c>( |
+  
+  <c g' c>4 <es g c> <g d'>) r | % Bar 82
+  r4 \voiceOne \times 2/3 { g8( d g) } \oneVoice <fis, fis'>2 |
+  r4 <d' fis b>( <b fis' b> <d fis b> |
+  <fis cis'>4) r r \voiceOne \times 2/3 { ges8( des ges) } |
+  
+  <f, f'>4 r r \tupletNumbersOff \times 2/3 { <es'' es'>8-.( a-. <c, c'>-.) } | % Bar 86
+  \times 2/3 { f8-.( <a, a'> es'-. <f, f'>-. c'-. <es, es'>-.
+    a-. <c, c'>-. es-.) <d d'>( bes' <d, d'>) } |
+  \times 2/3 { <es es'>8( bes' <es, es'>) <d d'>( bes' <d, d'>)
+    <es es'>[( bes' <es, es'> bes' <es, es'> bes']) } |
 }
 
 leftOneVTwo = \relative c {
@@ -266,10 +371,38 @@ leftOneVTwo = \relative c {
   a4.( fis'8 a4) s4 |
   s1 |
   
+  s1*3 | % Bar 61
+  
+  %%%%%%%%%%
+  % Page 7
+  %%%%%%%%%%
+  
+  s1 | % Bar 64
+  s2 s8 <g= bes>4 q8 ~ |
+  q4 g s8 g4 <f a>8 ~ |
+  q4 f s8 f4( <e g>8 ~ |
+  
+  q8 <es g>4 <d g>8 ~ q4 <cis e>) | % Bar 68
   s1*3 |
   
+  s1*3 | % Bar 75
+  
+  s1*3 | % Bar 78
+  
+  %%%%%%%%%%
+  % Page 8
+  %%%%%%%%%%
+  
+  s1*2 | % Bar 78
+  s2. es=,4 |
   s1 |
   
+  s1 | % Bar 82
+  s4 b=,,4 s2 |
+  s1 |
+  s2. bes4 |
+  
+  s1*3 | % Bar 86
 }
 
 pianoROne = {

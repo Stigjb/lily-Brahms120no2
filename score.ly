@@ -12,7 +12,12 @@
 \bookpart {
   \score {
     <<
-      \new Staff \with {midiInstrument = #"clarinet"} <<
+      \new Staff \with {
+        midiInstrument = #"clarinet"
+        fontSize = #-2
+        \override StaffSymbol #'staff-space = #(magstep -2)
+        \override StaffSymbol #'thickness = #(magstep -2)
+      } <<
         \transpose bes c' { \globalOne }
         \clarinetOne
       >>
@@ -29,7 +34,7 @@
   }
 }
 
-\bookpart {
+%{\bookpart {
   \score {
     \new Staff \with {midiInstrument = #"clarinet"} << \transpose bes c' { \globalOne } \clarinetOne >>
     \layout {}
@@ -37,5 +42,5 @@
       \tempo 4 = 120
     }
   }
-}
+}%}
 
