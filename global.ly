@@ -1,7 +1,7 @@
-\version "2.16.0"
+\version "2.17.97"
 
-tupletNumbersOn = { \revert Voice.TupletNumber #'stencil }
-tupletNumbersOff = { \override Voice.TupletNumber #'stencil = ##f }
+tupletNumbersOn = { \revert Voice.TupletNumber.stencil }
+tupletNumbersOff = { \override Voice.TupletNumber.stencil = ##f }
 
 globalOne = \relative c {
   \compressFullBarRests

@@ -1,13 +1,13 @@
-\version "2.16.0"
+\version "2.17.97"
 
 \include "global.ly"
 
 rightOneVOne = \relative c, {
   \clef treble
   s1*0 % Workaround to allow the voice to start in the lower staff
-  \override Beam #'auto-knee-gap = #3
-  \override PianoStaff.TupletBracket #'bracket-visibility = ##f
-  \set PianoStaff.tupletSpannerDuration = #(ly:make-moment 1 4)
+  \override Beam.auto-knee-gap = #3
+  \override PianoStaff.TupletBracket.bracket-visibility = ##f
+  \set PianoStaff.tupletSpannerDuration = #(ly:make-moment 1/4)
   
   \change Staff = "down" es8( bes'
     \change Staff = "up" g' es' g bes, es g,) | % Bar 1
@@ -32,18 +32,18 @@ rightOneVOne = \relative c, {
   \clef treble
   <g''! g'!>8( es' bes g) r2 |
   <d d'>8( as' f d) r2 |
-  \times 2/3 {<es es'>8( bes' g bes g es)} r2 |
+  \tuplet 3/2 {<es es'>8( bes' g bes g es)} r2 |
   
   %%%%%%%%%%
   % Page 4
   %%%%%%%%%%
   
-  \times 2/3 {<f f'>8( c' as c as f)} r4 r8 <f, f'>-. | % Bar 14
+  \tuplet 3/2 {<f f'>8( c' as c as f)} r4 r8 <f, f'>-. | % Bar 14
   <as' f' as>4( ~ q16 <g g'>) <e e'>( <f f'>) <as, f' as>4.( <f f'>8-.) |
   <as' f' as>4. <g, es' g>8 <g' es' g>4( ~ q16 <f d' f>) <d b' d>( <es c' es>) |
   <es, c' es>4. <c' es c'>8-. <c, es c'>4 <a' c es a>4 |
   
-  \times 2/3 {<bes es bes'>8( ges' es} bes16 ges es bes)
+  \tuplet 3/2 {<bes es bes'>8( ges' es} bes16 ges es bes)
     \change Staff = "down" \voiceOne <ges bes des>2 ~ | % Bar 18
   <ges bes des>4 <ges as c>2 <f as ces>4 ~ |
   q4 <fes ges bes> r <fes ges> |
@@ -75,14 +75,14 @@ rightOneVOne = \relative c, {
   r8 <f a f'>4 <f es' f> <f as f'> <f g d' g>8 | % Bar 37
   r8 <g c es g>4 <c es c'>8 <c, es gis>16( a' es a c es a c) |
   <d, fis a d>4-> <es g c es>8-. <c g' c>-. <bes d g bes>4-> <a f' a>8-. <c es! a c>-.
-  \change Staff = "down" \voiceOne \times 2/3 { r8 d,,[( f \change Staff = "up" \oneVoice d' f d']
+  \change Staff = "down" \voiceOne \tuplet 3/2 { r8 d,,[( f \change Staff = "up" \oneVoice d' f d']
     \tupletNumbersOff es[ c es, \change Staff = "down" c a c])} |
   
-  \voiceOne \times 2/3 {r8 bes,[( d bes' \change Staff = "up" \oneVoice
+  \voiceOne \tuplet 3/2 {r8 bes,[( d bes' \change Staff = "up" \oneVoice
     d bes'] a[ f c \change Staff = "down" a f a])} | % Bar 41
-  \voiceOne \times 2/3 {ces,8( as' ces bes \change Staff = "up" \oneVoice g' bes)
+  \voiceOne \tuplet 3/2 {ces,8( as' ces bes \change Staff = "up" \oneVoice g' bes)
     \change Staff = "down" es,,( a \change Staff = "up" es' d bes' d)} |
-  \change Staff = "down" \times 2/3 {e,,8[( bes' \change Staff = "up"
+  \change Staff = "down" \tuplet 3/2 {e,,8[( bes' \change Staff = "up"
     e bes' e bes'])} a16( f es c a f es c) |
   
   r4 bes''(\f a es) | % Bar 44
@@ -112,13 +112,13 @@ rightOneVOne = \relative c, {
   
   <f' bes d f>4.( <d d'>8-.) <f, a d f>4.( <a a'>8-.) | % Bar 61
   <a' d a'>4. <as, as'>8-. <as' d as'>4. <g, g'>8-. |
-  \times 2/3 { <g' c g'>( es'! c g es c) g[( es bes \clef "bass" g es bes]) } |
+  \tuplet 3/2 { <g' c g'>( es'! c g es c) g[( es bes \clef "bass" g es bes]) } |
   
   %%%%%%%%%%
   % Page 7
   %%%%%%%%%%
   
-  \times 2/3 { r8 g( g') r bes,( bes') \clef "treble" r g( g') r bes,( bes') } | % Bar 64
+  \tuplet 3/2 { r8 g( g') r bes,( bes') \clef "treble" r g( g') r bes,( bes') } | % Bar 64
   d,4( <g bes d>) r8 \voiceOne d'( d es |
   es4 a,) \oneVoice r8 \voiceOne a( d a |
   d4 g,) \oneVoice r8 \voiceOne g( c g |
@@ -140,15 +140,26 @@ rightOneVOne = \relative c, {
   % Page 8
   %%%%%%%%%%
   
-  <g b g'>4 r r \tupletNumbersOn \times 2/3 { <c' c'>8( g' <c, c'> } | % Bar 78
-  \times 2/3 { g'8-.)( <b, b'>-. d-. <g, g'>-. b-. <d, d'>-. g-. <b, b'>-. d-.) } <es, es'>8 <f f'> |
+  % Bar 78
+  <g b g'>4 r r \tupletNumbersOn \tuplet 3/2 { <c' c'>8( g' <c, c'> } |
+  \tupletNumbersOff
+  \tuplet 3/2 { g'8-.)( <b, b'>-. d-. <g, g'>-. b-. <d, d'>-. g-. <b, b'>-. d-.) } <es, es'>8 <f f'> |
   <g b g'>4 r r <f' d' f>8( <es c' es>) |
   <d b' d>2 r4 <f d' f>8( <es c' es> |
   
-  <as f' as>8 <g es' g> <f d' f> <es c' es> <d b' d>4) r | % Bar 82
+  % Bar 82
+  <as f' as>8 <g es' g> <f d' f> <es c' es> <d b' d>4) r |
   \clef "bass" r \voiceOne b4 s2 \clef "treble" \oneVoice |
   r4 <e cis' e>8( <d b' d> <g e' g> <fis d' fis> <e cis' e> <d b' d> |
-  <cis ais' cis>4) r r
+  <cis ais' cis>4) r r \clef "bass" \voiceOne bes |
+  
+  % Bar 86
+  \oneVoice <f a f'>4 r r \clef "treble" \times 2/3 { f'8-.( <c c'>-. a'-.) } |
+  \times 2/3 { <es es'>8-.( c'-. <f, f'>-. es'-. <a, a'>-. f'-. <c c'>-. a'-. <f f'>-.) bes,( <f f'> b) } |
+  \times 2/3 { bes8( <es, es'> bes') bes( <f f'> bes) bes( <f f'> bes <f f'> bes <es, es'>) } |
+  
+  % Bar 89
+  
 }
 
 rightOneVTwo = \relative c {
@@ -190,6 +201,12 @@ rightOneVTwo = \relative c {
   s1 | % Bar 78
   s2. c4 |
   s1*2 |
+  
+  % Bar 82
+  s1 |
+  s4 <d, d'>8( <e e'>) <fis ais fis'>2 |
+  s1 |
+  s2. <des des'>8( <es es'>) |
 }
 
 leftOneVOne = \relative c {
@@ -220,7 +237,7 @@ leftOneVOne = \relative c {
   q8 <b b'>8-. <d' d'>4. <c, c'>8-. <c' es c'>4 ~ |
   q8 <a a'>-. <a, a'>4. <f' f'>8-. <f, f'>4 |
   
-  \times 2/3 {<ges ges'>8( bes es} ges16 bes d ges) \voiceTwo <es,, es'>2 | % Bar 18
+  \tuplet 3/2 {<ges ges'>8( bes es} ges16 bes d ges) \voiceTwo <es,, es'>2 | % Bar 18
   as!2( des) |
   ges,2( bes |
   ges'2 bes4) r |
@@ -256,8 +273,8 @@ leftOneVOne = \relative c {
   bes4 <bes' g'> bes, <bes' f' bes> |
   g,4 \oneVoice <g'' bes> f,, <f'' a> |
   
-  <bes d> r4 \times 2/3 {c,8[( es a c a c])} | % Bar 44
-  bes,4 r \times 2/3 {a8[( c f a f a])} |
+  <bes d> r4 \tuplet 3/2 {c,8[( es a c a c])} | % Bar 44
+  bes,4 r \tuplet 3/2 {a8[( c f a f a])} |
   as,8-.[( <f' ces'>-.]) g,-.[( <es' bes'>-.]) bes-.[( <f' as>-.]) es,-.[( <bes' g'>-.]) |
   g8-.[( <e' bes'>-.]) fis,-.[( <d' a'>-.]) a-.[( <e' a>-.]) a,,-.[( <a' e' a>-.]) |
   d,4( d') es!2 |
@@ -300,34 +317,34 @@ leftOneVOne = \relative c {
   q8 <g b>] q4. cis,8 cis4 ~ |
   
   cis8 d d4 d,2 | % Bar 72
-  \times 2/3 { g,8[( g' d' \tupletNumbersOff
-    fis c' \change Staff = "up" fis] c'[ fis, c d c \change Staff = "down" f,]) } |
-  \times 2/3 { b8( g d g d b e c g c g es) } |
+  \tuplet 3/2 { g,8[( g' d' \tupletNumbersOff
+    fis c' \change Staff = "up" fis] c'[ fis, c d c \change Staff = "down" fis,]) } |
+  \tuplet 3/2 { b8( g d g d b e c g c g es) } |
   
-  <d g d'>4 \times 2/3 { g,8( g' d' f b d g f b, } | % Bar 75
-  \times 2/3 { e8 c g c g e g e c) g'( f b, } |
-  \times 2/3 { e8 c g es' c g c g es) } r4 |
+  <d g d'>4 \tuplet 3/2 { g,8( g' d' f b d g f b, } | % Bar 75
+  \tuplet 3/2 { e8 c g c g e g e c) g'( f b, } |
+  \tuplet 3/2 { e8 c g es' c g c g es) } r4 |
   
   %%%%%%%%%%
   % Page 8
   %%%%%%%%%%
   
   \tupletNumbersOn
-  <d g d'>4 r r \times 2/3 { <g, g'>8( c <g g'> } | % Bar 78
+  <d g d'>4 r r \tuplet 3/2 { <g, g'>8( c <g g'> } | % Bar 78
   \tupletNumbersOff
-  \times 2/3 { b8) <g g'> d' <b b'> g' <d d'> b' <g g'> d' } <c, g'>4 |
-  <g g'>4 r r \tupletNumbersOn \voiceOne \times 2/3 { g'8( c g) } |
+  \tuplet 3/2 { b8) <g g'> d' <b b'> g' <d d'> b' <g g'> d' } <c, g'>4 |
+  <g g'>4 r r \tupletNumbersOn \voiceOne \tuplet 3/2 { g'8( c g) } |
   \oneVoice <g, g'>2 r4 <es' g c>( |
   
   <c g' c>4 <es g c> <g d'>) r | % Bar 82
-  r4 \voiceOne \times 2/3 { g8( d g) } \oneVoice <fis, fis'>2 |
+  r4 \voiceOne \tuplet 3/2 { g8( d g) } \oneVoice <fis, fis'>2 |
   r4 <d' fis b>( <b fis' b> <d fis b> |
-  <fis cis'>4) r r \voiceOne \times 2/3 { ges8( des ges) } |
+  <fis cis'>4) r r \voiceOne \tuplet 3/2 { ges8( des ges) } |
   
-  <f, f'>4 r r \tupletNumbersOff \times 2/3 { <es'' es'>8-.( a-. <c, c'>-.) } | % Bar 86
-  \times 2/3 { f8-.( <a, a'> es'-. <f, f'>-. c'-. <es, es'>-.
+  <f, f'>4 r r \tupletNumbersOff \tuplet 3/2 { <es'' es'>8-.( a-. <c, c'>-.) } | % Bar 86
+  \tuplet 3/2 { f8-.( <a, a'> es'-. <f, f'>-. c'-. <es, es'>-.
     a-. <c, c'>-. es-.) <d d'>( bes' <d, d'>) } |
-  \times 2/3 { <es es'>8( bes' <es, es'>) <d d'>( bes' <d, d'>)
+  \tuplet 3/2 { <es es'>8( bes' <es, es'>) <d d'>( bes' <d, d'>)
     <es es'>[( bes' <es, es'> bes' <es, es'> bes']) } |
 }
 
@@ -422,7 +439,7 @@ pianoLOne = {
 }
 
 pianoDynOne = \new Dynamics {
-  \override Voice.Hairpin #'to-barline = ##f
+  \override Voice.Hairpin.to-barline = ##f
   
   s1\p | % Bar 1
   s1*3 |

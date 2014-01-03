@@ -1,4 +1,4 @@
-\version "2.16.0"
+\version "2.17.97"
 \include "global.ly"
 \include "clarinet.ly"
 \include "piano.ly"
@@ -15,8 +15,8 @@
       \new Staff \with {
         midiInstrument = #"clarinet"
         fontSize = #-2
-        \override StaffSymbol #'staff-space = #(magstep -2)
-        \override StaffSymbol #'thickness = #(magstep -2)
+        \override StaffSymbol.staff-space = #(magstep -2)
+        \override StaffSymbol.thickness = #(magstep -2)
       } <<
         \transpose bes c' { \globalOne }
         \clarinetOne
